@@ -660,6 +660,14 @@
     }
 }%template(double_vector) std::vector<double>;
 
+%ignore CompleteTestType::bounded_sequence_bool_field(std::vector<bool>&&);
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore CompleteTestType::bounded_sequence_bool_field() const;
+%template(bool_vector) std::vector<bool>;
+
 %ignore CompleteTestType::bounded_sequence_enum_field(std::vector<Color>&&);
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -835,6 +843,14 @@
         return self->data();
     }
 }%template(double_vector) std::vector<double>;
+
+%ignore CompleteTestType::unbounded_sequence_bool_field(std::vector<bool>&&);
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore CompleteTestType::unbounded_sequence_bool_field() const;
+%template(bool_vector) std::vector<bool>;
 
 %ignore CompleteTestType::unbounded_sequence_enum_field(std::vector<Color>&&);
 
@@ -1356,6 +1372,14 @@
     }
 }%template(double_vector) std::vector<double>;
 
+%ignore KeyedCompleteTestType::bounded_sequence_bool_field(std::vector<bool>&&);
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore KeyedCompleteTestType::bounded_sequence_bool_field() const;
+%template(bool_vector) std::vector<bool>;
+
 %ignore KeyedCompleteTestType::bounded_sequence_enum_field(std::vector<Color>&&);
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -1531,6 +1555,14 @@
         return self->data();
     }
 }%template(double_vector) std::vector<double>;
+
+%ignore KeyedCompleteTestType::unbounded_sequence_bool_field(std::vector<bool>&&);
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore KeyedCompleteTestType::unbounded_sequence_bool_field() const;
+%template(bool_vector) std::vector<bool>;
 
 %ignore KeyedCompleteTestType::unbounded_sequence_enum_field(std::vector<Color>&&);
 
