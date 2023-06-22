@@ -22,6 +22,7 @@
 #ifndef _FAST_DDS_GENERATED_TEST_COMPLETE_H_
 #define _FAST_DDS_GENERATED_TEST_COMPLETE_H_
 
+#include "test_included_modules.h"
 
 #include <fastrtps/utils/fixed_size_string.hpp>
 
@@ -419,6 +420,31 @@ public:
      */
     eProsima_user_DllExport Material& enum2_field();
 
+    /*!
+     * @brief This function copies the value in member included_module_struct
+     * @param _included_module_struct New value to be copied in member included_module_struct
+     */
+    eProsima_user_DllExport void included_module_struct(
+            const eprosima::test2::StructType2& _included_module_struct);
+
+    /*!
+     * @brief This function moves the value in member included_module_struct
+     * @param _included_module_struct New value to be moved in member included_module_struct
+     */
+    eProsima_user_DllExport void included_module_struct(
+            eprosima::test2::StructType2&& _included_module_struct);
+
+    /*!
+     * @brief This function returns a constant reference to member included_module_struct
+     * @return Constant reference to member included_module_struct
+     */
+    eProsima_user_DllExport const eprosima::test2::StructType2& included_module_struct() const;
+
+    /*!
+     * @brief This function returns a reference to member included_module_struct
+     * @return Reference to member included_module_struct
+     */
+    eProsima_user_DllExport eprosima::test2::StructType2& included_module_struct();
 
     /*!
     * @brief This function returns the maximum serialized size of an object
@@ -493,6 +519,7 @@ private:
     std::string m_string_field;
     Color m_enum_field;
     Material m_enum2_field;
+    eprosima::test2::StructType2 m_included_module_struct;
 
 };
 const uint32_t max_array_size = 3;
