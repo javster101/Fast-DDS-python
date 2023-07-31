@@ -34,6 +34,7 @@ find_package(SWIG REQUIRED)
 include(${SWIG_USE_FILE})
 set(CMAKE_SWIG_FLAGS "")
 
+set(Python_ADDITIONAL_VERSIONS 3.8)
 find_package (Python3 COMPONENTS Interpreter Development REQUIRED)
 
 find_package(fastrtps REQUIRED)
